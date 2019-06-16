@@ -26,12 +26,17 @@ namespace MassiveDelete
             var rootPath = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
             Logger logger = new LoggerConfiguration()
                 .WriteTo.Console()
-                .WriteTo.File(Path.Combine(rootPath, "log-.log"))
+                .WriteTo.File(path: Path.Combine(rootPath, "logs", "log-.log"),
+                    rollingInterval: RollingInterval.Day,
+                    fileSizeLimitBytes: 1_000_000_000,
+                    rollOnFileSizeLimit: true,
+                    shared: true,
+                    flushToDiskInterval: TimeSpan.FromSeconds(1))
                 .CreateLogger();
             return logger;
         }
 
-        static async Task Main(string[] args)
+        public static async Task Main(string[] args)
         {
             var logger = GetLogger();
             logger.Information("Starting Service...");
