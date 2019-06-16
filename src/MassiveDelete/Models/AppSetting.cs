@@ -2,6 +2,8 @@ namespace MassiveDelele.Models
 {
     public class AppSetting
     {
+        public AlfrescoSetting Alfresco { get; set; }
+        public int MaxItemSearch { get; set; }
         public int MaxHttpClient { get; set; }
         public int SleepTime { get; set; }
     }

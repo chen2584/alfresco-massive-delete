@@ -35,11 +35,13 @@ namespace MassiveDelete
         {
             var logger = GetLogger();
             logger.Information("Starting Service...");
-            
+
             var setting = LoadSetting();
             var serviceProvider = new ServiceCollection()
+                .AddHttpClient()
                 .AddSingleton<Logger>(logger)
                 .AddSingleton<AppSetting>(setting)
+                .AddSingleton<AlfrescoService>()
                 .AddSingleton<MainService>()
                 .BuildServiceProvider();
 
