@@ -35,7 +35,7 @@ namespace MassiveDelete.Services
         /// <summary>
         /// Search Alfresco Node by Query.
         /// </summary>
-        public async Task<AlfrescoSearchOutput> SearchNode(string query)
+        public async Task<AlfrescoSearchOutput> SearchNodeAsync(string query)
         {
 
             var client = httpClientFactory.CreateClient();
@@ -49,7 +49,7 @@ namespace MassiveDelete.Services
                 },
                 Paging = new AlfrescoSearchPagingInput
                 {
-                    MaxItems = setting.MaxItemSearch.ToString(),
+                    MaxItems = setting.MaxSearchItem.ToString(),
                     SkipCount = "0"
                 }
             };
@@ -75,7 +75,7 @@ namespace MassiveDelete.Services
         /// <return>
         /// true if success, otherwise false.
         /// </return>
-        public async Task<bool> DeleteNode(string uuid)
+        public async Task<bool> DeleteNodeAsync(string uuid)
         {
             var client = httpClientFactory.CreateClient();
             client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", GetAuthenticationToken()); // Attach Token

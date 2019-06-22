@@ -52,7 +52,9 @@ namespace MassiveDelete
 
             var mainService = serviceProvider.GetService<MainService>();
             await mainService.StartAsync();
-            logger.Information("Stopped Service...");
+            
+            logger.Information("Stopped Service...Press any key to exit.");
+            Console.ReadLine();
         }
     }
 }

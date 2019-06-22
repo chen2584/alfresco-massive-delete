@@ -9,7 +9,6 @@ namespace MassiveDelete.Tests
     {
         readonly AlfrescoService alfrescoService;
         readonly AppSetting setting;
-
         public UnitTest()
         {
             this.setting = new AppSetting
