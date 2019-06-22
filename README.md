@@ -1,5 +1,5 @@
 # alfresco-massive-delete
-As *afaust* said in https://community.alfresco.com/thread/239770-problem-with-delete-big-folder
+As **afaust** said in https://community.alfresco.com/thread/239770-problem-with-delete-big-folder
 
 > It is never a good idea to try and delete (or modify) more than a few hundred elements in a single operation. Your deletion should be implemented as an incremental operation instead of trying to delete the whole folder in one go...
 
@@ -8,12 +8,12 @@ We should not delete whole folder that contains more than hundred of nodes in a 
 
 
 ## My Test Case
-Tested with 750k nodes, It run perfectly and Alfresco not crash.
+Tested with **750k nodes**, It run perfectly and Alfresco not crash.
 
 
 ## USAGE
 1. Download zip from Release and Extra the zip.
-2. Change *appsettings.json* and save it.
+2. Change **appsettings.json** and save it.
 ```
 {
     "Alfresco": {
