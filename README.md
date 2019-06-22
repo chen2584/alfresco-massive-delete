@@ -6,10 +6,12 @@ As *afaust* said in https://community.alfresco.com/thread/239770-problem-with-de
 
 We should not delete whole folder that contains more than hundred of nodes in a single operation, So i create this script for delete any nodes that matche what i want to delete. The script will iteration to delete every single node that matchs in search query.
 
-### My Test Case
+
+## My Test Case
 Tested with 750k nodes, It run perfectly and Alfresco not crash.
 
-### USAGE
+
+## USAGE
 1. Download zip from Release and Extra the zip.
 2. Change *appsettings.json* and save it.
 ```
